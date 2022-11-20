@@ -7,14 +7,12 @@ const Task = require("./models/taskModel");
 const taskRoutes = require("./routes/taskRoute");
 const cors = require("cors");
 
-HTTP/1.1 200 OK
-Access-Control-Allow-Origin: https://mern-taskmanager-app.onrender.com
-Access-Control-Allow-Methods: GET, DELETE, POST, PUT, HEAD, OPTIONS
+
 // Middleware
 app.use(express.json())
 app.use(express.urlencoded({extended: false}));
 app.use(cors({
-    origin: ["http://locahlhost:3000", "https://mern-Taskmanager-app.onrender.com"]
+    origin: ["http://locahlhost:3000", "https://mern-taskmanager-app.onrender.com/"]
 }));
 app.use("/api/tasks", taskRoutes);
 //const logger = (req, res, next) =>{
@@ -23,12 +21,6 @@ app.use("/api/tasks", taskRoutes);
 //    next()
 //}
 
-app.use((req,res,next)=>{
-    res.setHeader('Access-Control-Allow-Origin','*');
-    res.setHeader('Access-Control-Allow-Methods','GET,POST,PUT,PATCH,DELETE');
-    res.setHeader('Access-Control-Allow-Methods','Content-Type','Authorization');
-    next(); 
-})
 
 // Routes
 app.get("/", (req, res)=>{
