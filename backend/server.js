@@ -10,7 +10,9 @@ const cors = require("cors");
 // Middleware
 app.use(express.json())
 app.use(express.urlencoded({extended: false}));
-app.use(cors());
+app.use(cors({
+    origin: ["http://locahlhost:3000", "https://mern-Taskmanager-app.onrender.com"]
+}));
 app.use("/api/tasks", taskRoutes);
 //const logger = (req, res, next) =>{
 //    console.log("Middleware ran");
