@@ -12,7 +12,7 @@ const cors = require("cors");
 app.use(express.json())
 app.use(express.urlencoded({extended: false}));
 app.use(cors({
-    origin: ["http://locahlhost:3000", "https://mern-taskmanager-app.onrender.com/"]
+    origin: ["http://locahlhost:3000", "https://mern-taskmanager-app.onrender.com"]
 }));
 app.use("/api/tasks", taskRoutes);
 //const logger = (req, res, next) =>{
