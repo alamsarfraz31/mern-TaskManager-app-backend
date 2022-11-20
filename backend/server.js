@@ -7,6 +7,9 @@ const Task = require("./models/taskModel");
 const taskRoutes = require("./routes/taskRoute");
 const cors = require("cors");
 
+HTTP/1.1 200 OK
+Access-Control-Allow-Origin: https://mern-taskmanager-app.onrender.com/
+Access-Control-Allow-Methods: GET, DELETE, POST, PUT, HEAD, OPTIONS
 // Middleware
 app.use(express.json())
 app.use(express.urlencoded({extended: false}));
